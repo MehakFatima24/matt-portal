@@ -1,0 +1,14 @@
+
+<div id="test-list">
+    <input type="text" class="search" />
+    <ul class="list">
+      {{#each taskList as |task|}}
+            {{#if (eq task.status 'Completed')}}
+              <li><p class=""><del>{{task.name}}</del></p></li>
+            {{else}}
+              <li><p class="">{{task.name}}</p></li>
+            {{/if}}
+      {{/each}}
+    </ul>
+    <ul class="pagination"></ul>
+</div>

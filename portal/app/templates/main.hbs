@@ -1,0 +1,93 @@
+<div class='row' style=''>
+    <div class='col-md-12'>
+        <div class='card-box' style='background-color:black; height: 62px;'>
+            <div style='display: inline-block'>
+                <!-- Username to be replaced -->
+                <h4 class='text-light header-title m-t-0 m-b-30' style='padding-left:3px'>{{model.full_name}}</h4>
+            </div>
+            <div style='display: inline-block' class='pull-right'>
+                <h4 class='text-light header-title m-t-0 m-b-30' style='padding-left:3px' {{action 'invalidateSession'}}><i class='ti ti-power-off'></i></h4>
+            </div>
+        </div>
+    </div>
+</div>
+<div class='row'>
+    <div class='col-md-12'>
+        <div class='card-box'>
+            <h4 class='text-dark  header-title m-t-0 m-b-30'>{{t 'main.labels.personal_details'}}</h4>
+            <div class='row'>
+                <div class='col-sm-12'>
+                    <div class='card-box'>
+                        <div class='row'>
+                            <div class='col-md-6'>
+                                <form class='form-horizontal' role='form' style='padding-left: 10%;'>
+                                    <div class='form-group'>
+                                        <label class='col-sm-2 control-label'>{{t 'main.fields.phone'}}</label>
+                                        <div class='col-sm-10'>
+                                            <p class='form-control-static'>{{model.phone_mobile}}</p>
+                                        </div>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label class='col-sm-2 control-label'>{{t 'main.fields.email'}}</label>
+                                        <div class='col-sm-10'>
+                                            <p class='form-control-static'>{{model.email1}}</p>
+                                        </div>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label class='col-sm-2 control-label'>{{t 'main.fields.receive_emails'}}</label>
+                                        <div class='checkbox' style='margin-left:18%'>
+                                            <input id='checkbox0' type='checkbox' checked={{model.receive_emails_c}} disabled=true>
+                                            <label for='checkbox0'></label>
+                                        </div>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label class='col-sm-2 control-label'>{{t 'main.fields.receive_sms'}}</label>
+                                        <div class='checkbox' style='margin-left:18%'>
+                                            <input id='checkbox0' type='checkbox' checked={{model.receive_sms_c}} disabled=true>
+                                            <label for='checkbox0'></label>
+                                        </div>
+                                    </div>
+                                    <div class='form-group'>
+                                        <label class='col-sm-2 control-label' style='padding-top:0px !important'>{{t 'main.fields.status'}}</label>
+                                        <div class='progress' style='margin-top: 7px;'>
+                                            <div class='progress-bar progress-bar-success  progress-animated wow animated' role='progressbar' aria-valuenow={{model.status}} aria-valuemin='0' aria-valuemax='100' style='width: {{model.status}}%;'>
+                                                <!-- <span class='sr-only'>48% Complete</span> -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <a href='#'><label class='col-sm-2 pull-in lg-font' style='margin-left:14%; '>{{t 'main.fields.contact_us'}}</label></a>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class='row'>
+    <div class='col-md-12'>
+        <div class='card-box' style='height: 100%'>
+            <div class='col-md-5'>
+                <div class='card-box' style=''>
+                    <h4 class='text-dark  header-title m-t-0 m-b-30'>{{t 'main.labels.client_checklist'}}</h4>
+                    {{#if taskFlag}} {{all-tasks taskList=allTasks.tasks}} {{/if}}
+                </div>
+            </div>
+            <div class='col-md-5'>
+                <div class='card-box' >
+                    <h4 class='text-dark  header-title m-t-0 m-b-30'>{{t 'main.labels.client_links'}}</h4>
+                </div>
+                <div class='card-box' style='display:-webkit-box'>
+                  <div>
+                    <h4 class='text-dark  header-title m-t-0 m-b-30'>{{t 'main.labels.upload_file'}}</h4>
+                    <div class='form-group'>
+                        <label class='col-sm-2 control-label'>{{t 'main.fields.file'}}:</label> {{file-upload}}
+
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
